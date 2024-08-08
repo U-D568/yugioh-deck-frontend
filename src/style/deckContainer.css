@@ -1,0 +1,25 @@
+.deck-container>.card-container {
+    margin-top: 8px;
+}
+
+.main-deck-container {
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    margin-bottom: 8px;
+}
+
+.side-deck-container {
+    flex: 1;
+}
+
+.deck-container-title {
+    font-size: large;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, var(--desktop-card-width));
+    gap: 8px;
+    overflow: auto;
+}

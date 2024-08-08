@@ -1,4 +1,5 @@
 import SearchIcon from '@mui/icons-material/Search';
+import "../style/searchBar.css";
 
 export default function (props) {
     const { onSearch = () => { } } = props;

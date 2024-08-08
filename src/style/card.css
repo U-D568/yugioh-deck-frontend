@@ -1,0 +1,10 @@
+.card {
+    display: inline-flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+.card>.card-name {
+    font-size: small;
+    text-align: center;
+}

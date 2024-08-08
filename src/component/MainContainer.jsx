@@ -7,20 +7,11 @@ import { useDeckInfo } from "./DeckInfoProvider";
 
 
 export default function MainContainer(props) {
-    const { margin, flex } = props;
     const theme = useTheme();
     const { deckInfo } = useDeckInfo();
 
     return (
-        <Paper sx={{
-            bgcolor: 'background.default',
-            padding: theme.spacing(2),
-            margin: theme.spacing(2, 2),
-            flexGrow: flex,
-            overflow: "auto",
-            display: "flex",
-            flexDirection: "column"
-        }}>
+        <div className="main-content">
             {/* main deck container*/}
             <DeckContainer
                 className="main-deck-container"
@@ -33,6 +24,6 @@ export default function MainContainer(props) {
                 cardList={deckInfo?.extraDeck}
                 title="Extra Deck"
             />
-        </Paper>
+        </div>
     );
 }

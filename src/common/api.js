@@ -12,5 +12,12 @@ export async function searchCard(keyword, pageIndex, chunk) {
     if (res) {
         return res;
     }
-    return res
+}
+
+export async function getCardInfo(cardId) {
+    const param = { cardName: cardId };
+    const res = await getAxios("/cards/cardinfo", param);
+    if (res) {
+        return res;
+    }
 }

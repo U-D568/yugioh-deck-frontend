@@ -1,13 +1,11 @@
 import { createContext, useContext, useState } from "react";
+import { DeckData } from "../classes/DeckData";
 
 const DeckInfoContext = createContext();
 
 export function DeckInfoProvider(props) {
     const { children } = props;
-    const [deckInfo, setDeckInfo] = useState({
-        mainDeck: [],
-        extraDeck: []
-    });
+    const [deckInfo, setDeckInfo] = useState(new DeckData());
 
     return (
         <DeckInfoContext.Provider value={{ deckInfo, setDeckInfo }}>

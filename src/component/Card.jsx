@@ -1,7 +1,12 @@
+import "../style/card.css";
+
+
 export default function Card(props) {
     const {
         src,
         onClick,
+        onDoubleClick,
+        onRightClick,
         width = 98,
         height = 143,
         name
@@ -9,8 +14,14 @@ export default function Card(props) {
 
     return (
         <span className="card">
-            <img src={src} onClick={onClick} width={width} height={height} />
-            {name && <div>{name}</div>}
+            <img
+                src={src}
+                onDoubleClick={onDoubleClick}
+                onClick={onClick}
+                onContextMenu={onRightClick}
+                width={width} height={height}
+            />
+            {name && <div className="card-name">{name}</div>}
         </span>
     )
 }
