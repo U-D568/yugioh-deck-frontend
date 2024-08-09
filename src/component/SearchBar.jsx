@@ -1,5 +1,7 @@
 import SearchIcon from '@mui/icons-material/Search';
 import "../style/searchBar.css";
+import { IconButton } from '@mui/material';
+import ClearIcon from '@mui/icons-material/Clear';
 
 export default function (props) {
     const { onSearch = () => { } } = props;
@@ -10,12 +12,19 @@ export default function (props) {
         }
     }
 
+    const clearText = () => {
+
+    }
+
     return (
         <div className="search-bar">
             <SearchIcon />
             <span className="search-bar-warpper">
                 <input onKeyDown={onKeyDown} className="search-bar-input" placeholder="Search"></input>
             </span>
+            <IconButton onClick={clearText} sx={{padding: "0px"}}>
+                <ClearIcon fontSize='small' />
+            </IconButton>
         </div>
     )
 }

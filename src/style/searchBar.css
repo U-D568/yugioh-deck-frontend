@@ -4,6 +4,7 @@
     flex-direction: column;
     max-width: 283px;
     flex: 1;
+    overflow: auto;
 }
 
 .search-bar {
@@ -38,15 +39,11 @@
     display: none;
 } */
 
-.search-wrapper {
-    display: flex;
-    justify-content: center;
-}
-
-.search-results {
+.search-result {
     margin-top: 16px;
     display: grid;
     grid-template-columns: repeat(auto-fill, var(--desktop-card-search-width));
     gap: 8px;
+    max-height: calc(100vh - 156px - 16px - 8px * 15);
     overflow: auto;
 }

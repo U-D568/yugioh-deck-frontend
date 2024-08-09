@@ -8,6 +8,7 @@
 
 .app {
     height: 100vh;
+    max-height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -25,7 +26,6 @@
     flex-grow: 1;
     flex-direction: column;
     border: black;
-    overflow: auto;
     max-width: 857px;
 }
 
@@ -33,6 +33,45 @@
     text-align: center;
     padding: 16px;
 }
+
 .header>h1 {
     margin: 10px 0px;
+}
+
+.card-detail-panel {
+    width: calc(100vw - 10%);
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    z-index: 2;
+}
+
+.card-detail-image {
+    height: 90vh;
+}
+
+.card-detail-panel>.detail {
+    height: calc(90vh - 32px);
+    padding: 16px;
+    margin-left: 32px;
+}
+
+.card-detail-panel>.detail>.title {
+    flex: 1;
+    font-size: xx-large;
+    color: #e3e3e3;
+}
+
+.card-detail-panel>.detail>.description {
+    margin-top: 16px;
+    flex: 9;
+    font-size: large;
+    color: #e3e3e3;
 }

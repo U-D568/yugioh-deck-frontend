@@ -2,24 +2,22 @@
     margin-top: 8px;
 }
 
-.main-deck-container {
-    display: flex;
-    flex: 3;
-    flex-direction: column;
-    margin-bottom: 8px;
+.side-deck-container {
+    margin-top: 16px;
 }
 
-.side-deck-container {
-    flex: 1;
+.deck-container-title>span {
+    font-size: large;
 }
 
 .deck-container-title {
-    font-size: large;
+    display: flex;
+    padding: 0px 12px;
+    justify-content: space-between;
 }
 
 .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, var(--desktop-card-width));
     gap: 8px;
-    overflow: auto;
 }

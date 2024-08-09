@@ -8,3 +8,28 @@
     font-size: small;
     text-align: center;
 }
+
+/* .card>img {
+    z-index: 0;
+}
+
+.card>img.zoom-in {
+    z-index: 2;
+    animation: zoom-in 0.5s forwards;
+}
+
+@keyframes zoom-in {
+    0.1% {
+        position: absolute;
+        top: 50vh;
+        left: 50vw;
+        transform: scale(3);
+    }
+
+    100% {
+        position: absolute;
+        top: 50vh;
+        left: 50vw;
+        transform: scale(4);
+    }
+} */

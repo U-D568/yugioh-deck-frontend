@@ -37,7 +37,7 @@ export function isExtraDeck(cardData) {
 export function encodeDeckData(deckData) {
     let reduced = { ...deckData };
     for (let key of Object.keys(reduced)) {
-        reduced[key] = reduced[key].map((card) => ({ id: card.id }));
+        reduced[key] = reduced[key].map((card) => ({ id: card.id, frameType: card.frameType }));
     }
     let stringify = JSON.stringify(reduced);
     let deflated = pako.deflate(stringify, { to: "string" });
@@ -63,4 +63,45 @@ export function decodeDeckData(hexCode) {
 export function updateDeckCode(code) {
     const newURL = `${window.location.origin}?deck=${code}`;
     window.history.pushState({}, "", newURL);
+}
+
+export function getCardPriority(cardType) {
+    const priority_enum = {
+        normal: 0,
+        normal_pendulum: 1,
+        effect: 2,
+        effect_pendulum: 3,
+        ritual: 4,
+        ritual_pendulum:5,
+        spell: 6,
+        trap: 7,
+        fusion: 8,
+        fusion_pendulum: 9,
+        synchro: 10,
+        synchro_pendulum: 11,
+        xyz: 12,
+        xyz_pendulum: 13,
+        link: 14
+    }
+
+    return priority_enum[cardType];
+}
+
+export function addClassName(className, newClass) {
+    let classList = className.split(" ");
+    if (classList.findIndex((e) => e === newClass) === -1) {
+        classList.push(newClass);
+    }
+
+    return classList.join(" ");
+}
+
+export function removeClassName(className, target) {
+    let classList = className.split(" ");
+    let index = classList.findIndex((e) => e === target);
+    if (index !== -1) {
+        classList.splice(index, 1);
+    }
+
+    return classList.join(" ");
 }

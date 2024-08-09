@@ -13,7 +13,7 @@ export default function Card(props) {
     } = props;
 
     return (
-        <span className="card">
+        <span className="card search-thumbnail">
             <img
                 src={src}
                 onDoubleClick={onDoubleClick}
